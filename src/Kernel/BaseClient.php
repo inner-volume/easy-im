@@ -1,10 +1,10 @@
 <?php
 
-namespace whereof\easyIm\Kernel;
+namespace openphp\easyIm\Kernel;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use whereof\Logger\Logger;
+use openphp\Logger\Logger;
 
 class BaseClient
 {

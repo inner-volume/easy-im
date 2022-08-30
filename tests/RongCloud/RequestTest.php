@@ -5,10 +5,10 @@
  * Date: 2021-10-17 18:41
  */
 
-namespace whereof\easyIm\Tests\RongCloud;
+namespace openphp\easyIm\Tests\RongCloud;
 
-use whereof\easyIm\RongCloud\Request\RongCloudClient;
-use whereof\easyIm\Tests\TestCase;
+use openphp\easyIm\RongCloud\Request\RongCloudClient;
+use openphp\easyIm\Tests\TestCase;
 
 class RequestTest extends TestCase
 {

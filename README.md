@@ -8,13 +8,13 @@
 ## 安装
 
 ~~~~
-composer require whereof/easy-im
+composer require openphp/easy-im
 ~~~~
 
 ## 请求日志开启
 
 ~~~
-\whereof\easyIm\Kernel\BaseClient::$request_log=true;
+\openphp\easyIm\Kernel\BaseClient::$request_log=true;
 ~~~
 
 ## 案例
@@ -27,12 +27,12 @@ $config = [
   'identifier' => 'administrator',
   'secretKey'  => 'nfugb53xtlhyfq2kgiriganruyoagh93it1zwysmh2tmj5tnnmuqhd2og5ofktjt',
 ];
-$im = whereof\easyIm\Factory::Tencent($config);
+$im = openphp\easyIm\Factory::Tencent($config);
 // 自定义请求(账号同步到云端)
 $params = [
     'Identifier' => 'easyim',
     'Nick'       => 'easyim',
-    'FaceUrl'    => 'https://github.com/whereof/easy-im',
+    'FaceUrl'    => 'https://github.com/openphp/easy-im',
 ];
 $im->request->send('im_open_login_svc/account_import', $params);
 ~~~
@@ -47,7 +47,7 @@ $config = [
   'orgName'      => '',
   'appName'      => '',
 ];
-$im = whereof\easyIm\Factory::Huanxin($config);
+$im = openphp\easyIm\Factory::Huanxin($config);
 
 // 自定义请求(账号同步到云端)
 $params = [
@@ -65,7 +65,7 @@ $config = [
   'appKey'       => '',
   'masterSecret' => '',
 ];
-$im = whereof\easyIm\Factory::Jiguang($config);
+$im = openphp\easyIm\Factory::Jiguang($config);
 
 // 自定义请求(账号同步到云端)
 $params = [[
@@ -86,7 +86,7 @@ $config = [
   'appKey'    => '',
   'appSecret' => '',
 ];
-$im = whereof\easyIm\Factory::RongCloud($config);
+$im = openphp\easyIm\Factory::RongCloud($config);
 
 // 自定义请求(账号同步到云端)
 $params=[
@@ -102,7 +102,7 @@ $config = [
   'appKey'    => '',
   'appSecret' => '',
 ];
-$im = whereof\easyIm\Factory::Yunxin($config);
+$im = openphp\easyIm\Factory::Yunxin($config);
 // 自定义请求（账号同步到云端）
 $params = [
     'accid' => 'easyim',

@@ -5,19 +5,19 @@
  * Date: 2021-10-17 23:00
  */
 
-namespace whereof\easyIm\Kernel\Support;
+namespace openphp\easyIm\Kernel\Support;
 
 /**
  * Class Arr.
  *
- * @author whereof
+ * @author openphp
  */
 class Arr
 {
     /**
-     * Arr::buildItem(['userID_1','userID_2'], 'uid', ['name' => 'whereof']);.
+     * Arr::buildItem(['userID_1','userID_2'], 'uid', ['name' => 'openphp']);.
      *
-     * Arr::buildItem('userId_1', 'uid', ['name' => 'whereof']);
+     * Arr::buildItem('userId_1', 'uid', ['name' => 'openphp']);
      *
      * @param $ids
      * @param string $idKey

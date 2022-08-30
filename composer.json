@@ -1,8 +1,8 @@
 {
-  "name": "whereof/easy-im",
+  "name": "openphp/easy-im",
   "license": "MIT",
   "description": "非官方即时通信 IM，支持腾讯IM，环信IM，极光IM，融云IM，网易云信IM等",
-  "homepage": "https://github.com/whereof/easy-im",
+  "homepage": "https://github.com/openphp/easy-im",
   "keywords": [
     "easy-im",
     "IM",
@@ -29,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "whereof\\easyIm\\": "src/"
+      "openphp\\easyIm\\": "src/"
     }
   },
   "require-dev": {
@@ -38,7 +38,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "whereof\\easyIm\\Tests\\": "tests/"
+      "openphp\\easyIm\\Tests\\": "tests/"
     }
   },
   "scripts": {

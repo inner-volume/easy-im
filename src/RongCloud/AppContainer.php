@@ -1,8 +1,8 @@
 <?php
 
-namespace whereof\easyIm\RongCloud;
+namespace openphp\easyIm\RongCloud;
 
-use whereof\easyIm\Kernel\ServiceContainer;
+use openphp\easyIm\Kernel\ServiceContainer;
 
 /**
  * Class AppContainer.

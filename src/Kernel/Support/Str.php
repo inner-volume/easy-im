@@ -5,11 +5,11 @@
  * Date: 2021-10-26 00:01
  */
 
-namespace whereof\easyIm\Kernel\Support;
+namespace openphp\easyIm\Kernel\Support;
 
 /**
  * Class Str.
- * @author whereof
+ * @author openphp
  */
 class Str
 {

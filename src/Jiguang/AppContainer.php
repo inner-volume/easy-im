@@ -1,9 +1,9 @@
 <?php
 
 
-namespace whereof\easyIm\Jiguang;
+namespace openphp\easyIm\Jiguang;
 
-use whereof\easyIm\Kernel\ServiceContainer;
+use openphp\easyIm\Kernel\ServiceContainer;
 
 /**
  * Class AppContainer.

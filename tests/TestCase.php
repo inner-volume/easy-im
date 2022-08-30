@@ -5,16 +5,16 @@
  * Date: 2021-10-17 17:43
  */
 
-namespace whereof\easyIm\Tests;
+namespace openphp\easyIm\Tests;
 
 use GuzzleHttp\Client;
-use whereof\easyIm\Factory;
-use whereof\Helper\StrHelper;
+use openphp\easyIm\Factory;
+use openphp\Helper\StrHelper;
 
 /**
  * Class TestCase.
  *
- * @author whereof
+ * @author openphp
  */
 class TestCase extends \PHPUnit\Framework\TestCase
 {
@@ -26,7 +26,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
      */
     public function mockApiClient($name, $app)
     {
-        \whereof\easyIm\Kernel\BaseClient::$request_log = true;
+        \openphp\easyIm\Kernel\BaseClient::$request_log = true;
         $client                                         = \Mockery::mock($name, [$app])->makePartial();
         $client->allows()->getHttpClient()->andReturn(\Mockery::mock(Client::class));
 
@@ -48,7 +48,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return \whereof\easyIm\Huanxin\AppContainer
+     * @return \openphp\easyIm\Huanxin\AppContainer
      */
     public function Huanxin()
     {
@@ -65,7 +65,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return \whereof\easyIm\Jiguang\AppContainer
+     * @return \openphp\easyIm\Jiguang\AppContainer
      */
     public function Jiguang()
     {
@@ -78,7 +78,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return \whereof\easyIm\RongCloud\AppContainer
+     * @return \openphp\easyIm\RongCloud\AppContainer
      */
     public function RongCloud()
     {
@@ -91,7 +91,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return \whereof\easyIm\Tencent\AppContainer
+     * @return \openphp\easyIm\Tencent\AppContainer
      */
     public function Tencent()
     {
@@ -105,7 +105,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return \whereof\easyIm\Yunxin\AppContainer
+     * @return \openphp\easyIm\Yunxin\AppContainer
      */
     public function Yunxin()
     {

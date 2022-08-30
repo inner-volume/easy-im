@@ -5,10 +5,10 @@
  * Date: 2021-10-17 22:15
  */
 
-namespace whereof\easyIm\Tests\Huanxin;
+namespace openphp\easyIm\Tests\Huanxin;
 
-use whereof\easyIm\Huanxin\Request\HuanxinClient;
-use whereof\easyIm\Tests\TestCase;
+use openphp\easyIm\Huanxin\Request\HuanxinClient;
+use openphp\easyIm\Tests\TestCase;
 
 class RequestTest extends TestCase
 {

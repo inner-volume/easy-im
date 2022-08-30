@@ -1,11 +1,11 @@
 <?php
 
-namespace whereof\easyIm\Jiguang\Request;
+namespace openphp\easyIm\Jiguang\Request;
 
 use CURLFile;
 use GuzzleHttp\Exception\GuzzleException;
-use whereof\easyIm\Kernel\BaseClient;
-use whereof\easyIm\Kernel\Support\Str;
+use openphp\easyIm\Kernel\BaseClient;
+use openphp\easyIm\Kernel\Support\Str;
 
 /**
  * Class JiguangClient

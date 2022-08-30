@@ -1,11 +1,11 @@
 <?php
 
-namespace whereof\easyIm\Kernel;
+namespace openphp\easyIm\Kernel;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use whereof\easyIm\Kernel\Clients\CacheClient;
-use whereof\easyIm\Kernel\Clients\LoggerClient;
+use openphp\easyIm\Kernel\Clients\CacheClient;
+use openphp\easyIm\Kernel\Clients\LoggerClient;
 
 
 class ServiceProvider implements ServiceProviderInterface

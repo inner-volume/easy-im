@@ -5,10 +5,10 @@
  * Date: 2021-10-17 18:45
  */
 
-namespace whereof\easyIm\Tests\Jiguang;
+namespace openphp\easyIm\Tests\Jiguang;
 
-use whereof\easyIm\Jiguang\Request\JiguangClient;
-use whereof\easyIm\Tests\TestCase;
+use openphp\easyIm\Jiguang\Request\JiguangClient;
+use openphp\easyIm\Tests\TestCase;
 
 class RequestTest extends TestCase
 {

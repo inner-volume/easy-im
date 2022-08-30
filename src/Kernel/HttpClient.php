@@ -1,6 +1,6 @@
 <?php
 
-namespace whereof\easyIm\Kernel;
+namespace openphp\easyIm\Kernel;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -12,7 +12,7 @@ trait HttpClient
      */
     protected $guzzleConfig = [
         'headers'=>[
-            'User-Agent' => 'easy-im (https://github.com/whereof/easy-im)',
+            'User-Agent' => 'easy-im (https://github.com/openphp/easy-im)',
         ]
     ];
 

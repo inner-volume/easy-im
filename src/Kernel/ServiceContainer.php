@@ -1,6 +1,6 @@
 <?php
 
-namespace whereof\easyIm\Kernel;
+namespace openphp\easyIm\Kernel;
 
 use Pimple\Container;
 

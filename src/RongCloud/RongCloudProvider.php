@@ -1,10 +1,10 @@
 <?php
 
-namespace whereof\easyIm\RongCloud;
+namespace openphp\easyIm\RongCloud;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use whereof\easyIm\RongCloud\Request\RongCloudClient;
+use openphp\easyIm\RongCloud\Request\RongCloudClient;
 
 class RongCloudProvider implements ServiceProviderInterface
 {

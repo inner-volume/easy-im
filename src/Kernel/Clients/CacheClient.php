@@ -1,8 +1,8 @@
 <?php
 
-namespace whereof\easyIm\Kernel\Clients;
+namespace openphp\easyIm\Kernel\Clients;
 
-use whereof\easyIm\Kernel\BaseClient;
+use openphp\easyIm\Kernel\BaseClient;
 
 
 /**

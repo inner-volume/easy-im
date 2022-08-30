@@ -1,10 +1,10 @@
 <?php
 
-namespace whereof\easyIm\Yunxin\Request;
+namespace openphp\easyIm\Yunxin\Request;
 
 use GuzzleHttp\Exception\GuzzleException;
-use whereof\easyIm\Kernel\BaseClient;
-use whereof\easyIm\Kernel\Support\Str;
+use openphp\easyIm\Kernel\BaseClient;
+use openphp\easyIm\Kernel\Support\Str;
 
 /**
  * 网易云信 客户端

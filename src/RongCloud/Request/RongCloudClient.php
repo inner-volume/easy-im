@@ -1,10 +1,10 @@
 <?php
 
-namespace whereof\easyIm\RongCloud\Request;
+namespace openphp\easyIm\RongCloud\Request;
 
 use GuzzleHttp\Exception\GuzzleException;
-use whereof\easyIm\Kernel\BaseClient;
-use whereof\easyIm\Kernel\Support\Str;
+use openphp\easyIm\Kernel\BaseClient;
+use openphp\easyIm\Kernel\Support\Str;
 
 /**
  * 融云IM 即时通讯客户端

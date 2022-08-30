@@ -1,6 +1,6 @@
 <?php
 
-namespace whereof\easyIm;
+namespace openphp\easyIm;
 
 use InvalidArgumentException;
 

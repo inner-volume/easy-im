@@ -1,10 +1,10 @@
 <?php
 
-namespace whereof\easyIm\Jiguang;
+namespace openphp\easyIm\Jiguang;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use whereof\easyIm\Jiguang\Request\JiguangClient;
+use openphp\easyIm\Jiguang\Request\JiguangClient;
 
 /**
  * Class JiguangProvider.

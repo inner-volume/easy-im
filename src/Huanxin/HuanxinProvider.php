@@ -1,11 +1,11 @@
 <?php
 
 
-namespace whereof\easyIm\Huanxin;
+namespace openphp\easyIm\Huanxin;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use whereof\easyIm\Huanxin\Request\HuanxinClient;
+use openphp\easyIm\Huanxin\Request\HuanxinClient;
 
 class HuanxinProvider implements ServiceProviderInterface
 {

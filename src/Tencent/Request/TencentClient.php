@@ -1,10 +1,10 @@
 <?php
 
-namespace whereof\easyIm\Tencent\Request;
+namespace openphp\easyIm\Tencent\Request;
 
 use GuzzleHttp\Exception\GuzzleException;
-use whereof\easyIm\Kernel\BaseClient;
-use whereof\easyIm\Kernel\Support\Str;
+use openphp\easyIm\Kernel\BaseClient;
+use openphp\easyIm\Kernel\Support\Str;
 
 
 /**
@@ -18,7 +18,7 @@ use whereof\easyIm\Kernel\Support\Str;
  *  'secretKey' => '',
  * ];
  * Class TencentClient
- * @package whereof\easyIm\Tencent\Request
+ * @package openphp\easyIm\Tencent\Request
  */
 class TencentClient extends BaseClient
 {
