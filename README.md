@@ -8,7 +8,7 @@
 ## 安装
 
 ~~~~
-composer require Pkg6/easy-im
+composer require pkg6/easy-im
 ~~~~
 
 ## 请求日志开启
