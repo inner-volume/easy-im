@@ -3,6 +3,7 @@
 namespace Pkg6\easyIm\Kernel;
 
 use Pimple\Container;
+use Pkg6\easyIm\Kernel\Cache\FileCache;
 
 /**
  * Class ServiceContainer.
@@ -46,6 +47,17 @@ class ServiceContainer extends Container
             // http://docs.guzzlephp.org/en/stable/request-options.html
             'http' => [
                 'timeout' => 30.0,
+            ],
+            'cache' => [
+                "class" => FileCache::class,
+                'expire'        => 0,
+                'cache_subdir'  => true,
+                'prefix'        => '',
+                'path'          => '',
+                'hash_type'     => 'md5',
+                'data_compress' => false,
+                'tag_prefix'    => 'tag:',
+                'serialize'     => [],
             ],
         ];
 

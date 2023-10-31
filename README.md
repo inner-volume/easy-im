@@ -22,13 +22,27 @@ composer require pkg6/easy-im
 > 基于https://packagist.org/packages/psr/simple-cache#1.0
 
 ~~~
+use Pkg6\easyIm\Kernel\Cache\FileCache;
+
 $config = [
-  'appId'      => '5978322198',
-  'identifier' => 'administrator',
-  'secretKey'  => 'nfugb53xtlhyfq2kgiriganruyoagh93it1zwysmh2tmj5tnnmuqhd2og5ofktjt',
-  "cache"=>new \Pkg6\easyIm\Kernel\Cache\FileCache(["path"=>"./cache/"])
+    'appId'      => '5978322198',
+    'identifier' => 'administrator',
+    'secretKey'  => 'nfugb53xtlhyfq2kgiriganruyoagh93it1zwysmh2tmj5tnnmuqhd2og5ofktjt',
+    'cache'      => [
+        //必须定义
+        "class"         => FileCache::class,
+        //其他选项
+        'expire'        => 0,
+        'cache_subdir'  => true,
+        'prefix'        => '',
+        'path'          => './cache/',
+        'hash_type'     => 'md5',
+        'data_compress' => false,
+        'tag_prefix'    => 'tag:',
+        'serialize'     => [],
+    ],
 ];
-$im = Pkg6\easyIm\Factory::Tencent($config);
+$im     = Pkg6\easyIm\Factory::Tencent($config);
 ~~~
 
 
