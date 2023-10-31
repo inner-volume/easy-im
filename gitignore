@@ -1,4 +1,5 @@
 *.DS_Store
+/.idea/
 /vendor
 /*.php
 /.idea
@@ -7,3 +8,4 @@
 /runtime
 .php_cs.cache
 .phpunit.result.cache
+composer.lock

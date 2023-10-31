@@ -3,6 +3,8 @@
 namespace Pkg6\easyIm\Kernel\Clients;
 
 use Pkg6\easyIm\Kernel\BaseClient;
+use Pkg6\easyIm\Kernel\Cache\FileCache;
+use Psr\SimpleCache\CacheInterface;
 
 
 /**
@@ -11,24 +13,40 @@ use Pkg6\easyIm\Kernel\BaseClient;
 class CacheClient extends BaseClient
 {
     /**
+     * @return CacheInterface
+     *
+     */
+    private function store($cache = null)
+    {
+        $config = $this->app->getConfig();
+        if (isset($config["cache"]) && $config["cache"] instanceof CacheInterface) {
+            return $config["cache"];
+        }
+        return new FileCache();
+    }
+
+    /**
      * 设置缓存.
      * @param     $key
      * @param     $value
+     * @param null $ttl
      * @return bool
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function setCache($key, $value)
+    public function setCache($key, $value, $ttl = null)
     {
-        return file_put_contents($key, unserialize($value));
+        return $this->store()->set($key, $value, $ttl);
     }
 
     /**
      * 获取缓存.
      * @param $key
      * @return mixed
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function getCache($key)
     {
-        return file_get_contents($key);
+        return $this->store()->get($key);
     }
 
     /**
@@ -38,7 +56,7 @@ class CacheClient extends BaseClient
      */
     public function hasCache($key)
     {
-        return file_exists($key);
+        return $this->store()->has($key);
     }
 
     /**
@@ -48,6 +66,7 @@ class CacheClient extends BaseClient
      */
     public function deleteCache($key)
     {
-        return unlink($key);
+        return $this->store()->delete($key);
     }
+
 }

@@ -17,6 +17,21 @@ composer require pkg6/easy-im
 \Pkg6\easyIm\Kernel\BaseClient::$request_log=true;
 ~~~
 
+## 自定义缓存
+
+> 基于https://packagist.org/packages/psr/simple-cache#1.0
+
+~~~
+$config = [
+  'appId'      => '5978322198',
+  'identifier' => 'administrator',
+  'secretKey'  => 'nfugb53xtlhyfq2kgiriganruyoagh93it1zwysmh2tmj5tnnmuqhd2og5ofktjt',
+  "cache"=>new \Pkg6\easyIm\Kernel\Cache\FileCache(["path"=>"./cache/"])
+];
+$im = Pkg6\easyIm\Factory::Tencent($config);
+~~~
+
+
 ## 案例
 
 ### [腾讯IM](https://cloud.tencent.com/product/im) 
