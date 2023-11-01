@@ -31,8 +31,10 @@ class BaseClient
     {
         $this->app    = $app;
         $this->config = $app->getConfig();
+        $this->_initialize();
     }
 
+    protected function _initialize(){}
 
     /**
      * @param $message
