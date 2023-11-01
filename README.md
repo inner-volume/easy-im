@@ -22,15 +22,13 @@ composer require pkg6/easy-im
 > 基于https://packagist.org/packages/psr/simple-cache#1.0
 
 ~~~
-use Pkg6\easyIm\Kernel\Cache\FileCache;
-
 $config = [
     'appId'      => '5978322198',
     'identifier' => 'administrator',
     'secretKey'  => 'nfugb53xtlhyfq2kgiriganruyoagh93it1zwysmh2tmj5tnnmuqhd2og5ofktjt',
     'cache'      => [
         //必须定义
-        "class"         => FileCache::class,
+        "class"         => \Pkg6\Cache\cache\driver\File::class,
         //其他选项
         'expire'        => 0,
         'cache_subdir'  => true,
