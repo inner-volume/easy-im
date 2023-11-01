@@ -2,8 +2,8 @@
 
 namespace Pkg6\easyIm\Kernel\Clients;
 
+use Pkg6\Cache\cache\driver\File;
 use Pkg6\easyIm\Kernel\BaseClient;
-use Pkg6\easyIm\Kernel\Cache\FileCache;
 use Psr\SimpleCache\CacheInterface;
 
 
@@ -30,7 +30,7 @@ class CacheClient extends BaseClient
                 }
             }
         }
-        return new FileCache();
+        return new File();
     }
 
     /**

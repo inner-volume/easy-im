@@ -1,15 +1,14 @@
 <?php
 
-namespace iphper\easyIm\Kernel\Clients;
+namespace Pkg6\easyIm\Kernel\Clients;
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-use iphper\easyIm\Kernel\BaseClient;
+use Pkg6\easyIm\Kernel\BaseClient;
 
 
 class LoggerClient extends BaseClient
 {
-
 
     /**
      * @var array

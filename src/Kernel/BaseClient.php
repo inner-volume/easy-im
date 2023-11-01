@@ -2,10 +2,6 @@
 
 namespace Pkg6\easyIm\Kernel;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
-use Pkg6\Logger\Logger;
-
 class BaseClient
 {
     use HttpClient;
