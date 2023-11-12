@@ -4,6 +4,7 @@ namespace Pkg6\easyIm\Kernel;
 
 use Pimple\Container;
 use Pkg6\Cache\cache\driver\File;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class ServiceContainer.
@@ -45,11 +46,11 @@ class ServiceContainer extends Container
     {
         $base = [
             // http://docs.guzzlephp.org/en/stable/request-options.html
-            'http' => [
+            'http'  => [
                 'timeout' => 30.0,
             ],
             'cache' => [
-                "class" => File::class,
+                "class"         => File::class,
                 'expire'        => 0,
                 'cache_subdir'  => true,
                 'prefix'        => '',
@@ -59,6 +60,12 @@ class ServiceContainer extends Container
                 'tag_prefix'    => 'tag:',
                 'serialize'     => [],
             ],
+//            "cache" => new File(),
+//            "logger" => [
+//                "class"        => loggerClass::class,// 必须实现LoggerInterface
+//                "other_config" => "",
+//            ],
+//            "logger" =>  new Logger(), //必须实现LoggerInterface
         ];
 
         return array_replace_recursive($base, $this->defaultConfig, $this->userConfig);

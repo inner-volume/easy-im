@@ -14,19 +14,22 @@
   ],
   "authors": [
     {
-      "name": "qmister",
-      "email": "tp5er@qq.com"
+      "name": "zzqqw",
+      "email": "zhiqiangwang@aliyun.com"
     }
   ],
   "require": {
-    "php": ">7.0",
+    "php": ">7.4",
     "ext-zlib": "*",
     "ext-json": "*",
     "ext-curl": "*",
+    "psr/cache": "~1.0|^2.0",
+    "psr/log": "^1.0.1 || ^2.0",
+    "psr/simple-cache": "^1.0|^2.0",
     "guzzlehttp/guzzle": "^6|^7",
     "pimple/pimple": "^3.0",
-    "monolog/monolog": "^2.0",
-    "pkg6/cache": "^1.0"
+    "pkg6/cache": "^0.1",
+    "pkg6/log": "^0.1"
   },
   "autoload": {
     "psr-4": {
