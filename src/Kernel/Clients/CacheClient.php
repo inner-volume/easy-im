@@ -1,11 +1,18 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm\Kernel\Clients;
 
 use Pkg6\Cache\cache\driver\File;
 use Pkg6\easyIm\Kernel\BaseClient;
 use Psr\SimpleCache\CacheInterface;
-
 
 /**
  * Class CacheClient.
@@ -14,13 +21,12 @@ class CacheClient extends BaseClient
 {
     /**
      * @return CacheInterface
-     *
      */
     private function store()
     {
         $config = $this->app->getConfig();
-        if (isset($config["cache"])){
-            if ($config["cache"] instanceof CacheInterface){
+        if (isset($config["cache"])) {
+            if ($config["cache"] instanceof CacheInterface) {
                 return $config["cache"];
             }
             if (class_exists($config["cache"]['class'])) {
@@ -30,15 +36,19 @@ class CacheClient extends BaseClient
                 }
             }
         }
+
         return new File();
     }
 
     /**
      * 设置缓存.
+     *
      * @param     $key
      * @param     $value
      * @param null $ttl
+     *
      * @return bool
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function setCache($key, $value, $ttl = null)
@@ -48,8 +58,11 @@ class CacheClient extends BaseClient
 
     /**
      * 获取缓存.
+     *
      * @param $key
+     *
      * @return mixed
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function getCache($key)
@@ -59,7 +72,9 @@ class CacheClient extends BaseClient
 
     /**
      * 判断缓存是否存在.
+     *
      * @param $key
+     *
      * @return mixed
      */
     public function hasCache($key)
@@ -69,7 +84,9 @@ class CacheClient extends BaseClient
 
     /**
      * 删除缓存.
+     *
      * @param $key
+     *
      * @return bool
      */
     public function deleteCache($key)

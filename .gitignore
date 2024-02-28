@@ -1,7 +1,6 @@
 *.DS_Store
 /.idea/
 /vendor
-/*.php
 /.idea
 /composer.lock
 /.cache
@@ -9,3 +8,4 @@
 .php_cs.cache
 .phpunit.result.cache
 composer.lock
+.php-cs-fixer.cache

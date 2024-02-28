@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm;
 
 use InvalidArgumentException;
@@ -28,12 +36,12 @@ class Factory
      */
     protected static function make($name, array $config)
     {
-        $app = __NAMESPACE__.'\\'.$name.'\\AppContainer';
-        if (!class_exists($app)) {
-            throw new InvalidArgumentException('class not exists:'.$app);
+        $app = __NAMESPACE__ . '\\' . $name . '\\AppContainer';
+        if ( ! class_exists($app)) {
+            throw new InvalidArgumentException('class not exists:' . $app);
         }
-        $instance = crc32($name.serialize($config));
-        if (!isset(self::$instances[$instance])) {
+        $instance = crc32($name . serialize($config));
+        if ( ! isset(self::$instances[$instance])) {
             self::$instances[$instance] = new $app($config);
         }
 

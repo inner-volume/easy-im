@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm\RongCloud\Request;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -35,7 +43,7 @@ class RongCloudClient extends BaseClient
     public function send($action, $params)
     {
         $this->config['http']['http_errors'] = false;
-        $url = RongCloudClient::$host.'/'.Str::removeFristSlash($action);
+        $url = RongCloudClient::$host . '/' . Str::removeFristSlash($action);
         $headers = $this->buildHeaders();
 
         return $this->httpPost($url, $params, $headers);
@@ -48,14 +56,14 @@ class RongCloudClient extends BaseClient
     {
         $nonce = mt_rand();
         $timeStamp = time();
-        $sign = sha1($this->config['appSecret'].$nonce.$timeStamp);
+        $sign = sha1($this->config['appSecret'] . $nonce . $timeStamp);
 
         return [
             'RC-AppContainer-Key' => $this->config['appKey'],
-            'RC-Nonce'            => $nonce,
-            'RC-Timestamp'        => $timeStamp,
-            'RC-Signature'        => $sign,
-            'Content-Type'        => ' application/x-www-form-urlencoded',
+            'RC-Nonce' => $nonce,
+            'RC-Timestamp' => $timeStamp,
+            'RC-Signature' => $sign,
+            'Content-Type' => ' application/x-www-form-urlencoded',
         ];
     }
 }
