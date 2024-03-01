@@ -46,7 +46,7 @@ $im     = Pkg6\easyIm\Factory::Tencent($config);
 
 ## 案例
 
-### [腾讯IM](https://cloud.tencent.com/product/im) 
+### [腾讯IM](https://curl.qcloud.com/OcLpzLhC) 
 
 ~~~
 $config = [
@@ -143,7 +143,7 @@ $im->request->send('nimserver/user/create.action', $params);
 
 ## 支持厂商
 
-- [腾讯IM](https://cloud.tencent.com/product/im) 
+- [腾讯IM](https://curl.qcloud.com/OcLpzLhC) 
 - [环信IM](https://www.easemob.com/) 
 - [极光IM](https://www.jiguang.cn/im)
 - [融云IM](https://www.jiguang.cn/im) 

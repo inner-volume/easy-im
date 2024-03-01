@@ -1,8 +1,11 @@
 <?php
+
 /*
- * Desc:
- * User: qmister
- * Date: 2021-10-17 23:00
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
  */
 
 namespace Pkg6\easyIm\Kernel\Support;
@@ -30,14 +33,15 @@ class Arr
         $newArr = [];
         if (is_string($ids) || is_numeric($ids)) {
             $item[$idKey] = $ids;
-            $newArr[]     = array_merge($item, $expand);
+            $newArr[] = array_merge($item, $expand);
         }
         if (is_array($ids)) {
             foreach ($ids as $uid) {
                 $item[$idKey] = $uid;
-                $newArr[]     = array_merge($item, $expand);
+                $newArr[] = array_merge($item, $expand);
             }
         }
+
         return $newArr;
     }
 }

@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm\Kernel;
 
 use GuzzleHttp\Client;
@@ -11,7 +19,7 @@ trait HttpClient
      * @var array
      */
     protected $guzzleConfig = [
-        'headers'=>[
+        'headers' => [
             'User-Agent' => 'easy-im (https://github.com/Pkg6/easy-im)',
         ]
     ];
@@ -20,15 +28,16 @@ trait HttpClient
      * @param string $url
      * @param array $query
      * @param array $headers
-     * @return string
-     * @throws GuzzleException
      *
+     * @return string
+     *
+     * @throws GuzzleException
      */
     protected function httpGet(string $url, array $query = [], array $headers = [])
     {
         $options = [
             'headers' => $headers,
-            'query'   => $query,
+            'query' => $query,
         ];
 
         return $this->httpRequest('GET', $url, $options);
@@ -38,14 +47,15 @@ trait HttpClient
      * @param string $url
      * @param array $params
      * @param array $headers
-     * @return string
-     * @throws GuzzleException
      *
+     * @return string
+     *
+     * @throws GuzzleException
      */
     protected function httpPost(string $url, array $params = [], array $headers = [])
     {
         $options = [
-            'headers'     => $headers,
+            'headers' => $headers,
             'form_params' => $params,
         ];
 
@@ -56,15 +66,16 @@ trait HttpClient
      * @param string $url
      * @param array $params
      * @param array $headers
-     * @return string
-     * @throws GuzzleException
      *
+     * @return string
+     *
+     * @throws GuzzleException
      */
     protected function httpPostJson(string $url, array $params = [], array $headers = [])
     {
         $options = [
             'headers' => $headers,
-            'json'    => $params,
+            'json' => $params,
         ];
 
         return $this->httpRequest('POST', $url, $options);
@@ -74,15 +85,17 @@ trait HttpClient
      * @param $method
      * @param $url
      * @param $options
-     * @return string
-     * @throws GuzzleException
      *
+     * @return string
+     *
+     * @throws GuzzleException
      */
     protected function httpRequest($method, $url, $options)
     {
         $output = $this->httpClient()->request($method, $url, $options);
-        $resp   = $output->getBody()->getContents();
+        $resp = $output->getBody()->getContents();
         $this->requestLog($method . ':' . $url, $options, $resp);
+
         return $resp;
     }
 

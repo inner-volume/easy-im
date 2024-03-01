@@ -1,12 +1,19 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm\Kernel\Clients;
 
 use Pkg6\easyIm\Kernel\BaseClient;
 use Pkg6\Log\handler\StreamHandler;
 use Pkg6\Log\Logger;
 use Psr\Log\LoggerInterface;
-
 
 class LoggerClient extends BaseClient
 {
@@ -28,12 +35,14 @@ class LoggerClient extends BaseClient
                 }
             }
         }
+
         return new Logger([new StreamHandler()]);
     }
 
     /**
      * @param $name
      * @param $arguments
+     *
      * @return mixed
      */
     public function __call($name, $arguments)

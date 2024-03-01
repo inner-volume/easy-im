@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm\Yunxin\Request;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -29,12 +37,12 @@ class YunxinClient extends BaseClient
      * @param $params
      *
      * @return string
-     * @throws GuzzleException
      *
+     * @throws GuzzleException
      */
     public function send($action, $params)
     {
-        $url     = $this->buildHost(Str::removeFristSlash($action));
+        $url = $this->buildHost(Str::removeFristSlash($action));
         $headers = $this->buildHeaders();
 
         return $this->httpPost($url, $params, $headers);
@@ -55,16 +63,17 @@ class YunxinClient extends BaseClient
      */
     private function buildHeaders()
     {
-        $nonce       = uniqid('easyIm_');
-        $curTime     = (string)(time());
-        $checkSum    = sha1($this->config['appSecret'] . $nonce . $curTime);
+        $nonce = uniqid('easyIm_');
+        $curTime = (string) (time());
+        $checkSum = sha1($this->config['appSecret'] . $nonce . $curTime);
         $http_header = [
-            'AppKey'       => $this->config['appKey'],
-            'Nonce'        => $nonce,
-            'CurTime'      => $curTime,
-            'CheckSum'     => $checkSum,
+            'AppKey' => $this->config['appKey'],
+            'Nonce' => $nonce,
+            'CurTime' => $curTime,
+            'CheckSum' => $checkSum,
             'Content-Type' => 'application/x-www-form-urlencoded;charset=utf-8',
         ];
+
         return $http_header;
     }
 }

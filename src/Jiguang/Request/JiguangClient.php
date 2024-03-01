@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm\Jiguang\Request;
 
 use CURLFile;
@@ -37,12 +45,12 @@ class JiguangClient extends BaseClient
      * @param bool $report
      *
      * @return string
-     * @throws GuzzleException
      *
+     * @throws GuzzleException
      */
     public function send($method, $action, array $params = [], $report = false)
     {
-        $url    = $this->buildHost(Str::removeFristSlash($action), $report);
+        $url = $this->buildHost(Str::removeFristSlash($action), $report);
         $method = strtoupper($method);
         if ($method == 'UPLOAD') {
             return $this->upload($url, $params['file']);
@@ -68,27 +76,27 @@ class JiguangClient extends BaseClient
      */
     private function upload($uri, $filepath)
     {
-        $ch      = curl_init();
+        $ch = curl_init();
         $options = [
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HEADER         => true,
-            CURLOPT_HTTPHEADER     => [
+            CURLOPT_HEADER => true,
+            CURLOPT_HTTPHEADER => [
                 'Content-Type: multipart/form-data',
                 'Connection: Keep-Alive',
             ],
-            CURLOPT_USERAGENT      => 'JMessage-Api-easyIm-php-Client',
+            CURLOPT_USERAGENT => 'JMessage-Api-easyIm-php-Client',
             CURLOPT_CONNECTTIMEOUT => 20,
-            CURLOPT_TIMEOUT        => 120,
-            CURLOPT_HTTPAUTH       => CURLAUTH_BASIC,
-            CURLOPT_USERPWD        => $this->getAuth(),
-            CURLOPT_URL            => $uri,
-            CURLOPT_CUSTOMREQUEST  => 'POST',
+            CURLOPT_TIMEOUT => 120,
+            CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
+            CURLOPT_USERPWD => $this->getAuth(),
+            CURLOPT_URL => $uri,
+            CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_SSL_VERIFYHOST => 0,
         ];
         if (class_exists('\CURLFile')) {
             $options[CURLOPT_SAFE_UPLOAD] = true;
-            $options[CURLOPT_POSTFIELDS]  = ['filename' => new CURLFile($filepath)];
+            $options[CURLOPT_POSTFIELDS] = ['filename' => new CURLFile($filepath)];
         } else {
             if (defined('CURLOPT_SAFE_UPLOAD')) {
                 $options[CURLOPT_SAFE_UPLOAD] = false;
@@ -123,13 +131,13 @@ class JiguangClient extends BaseClient
     private function buildGuzzleOptions()
     {
         return [
-            'auth'    => [
+            'auth' => [
                 $this->config['appKey'],
                 $this->config['masterSecret'],
             ],
             'headers' => [
-                'Connection'   => 'Keep-Alive',
-                'User-Agent'   => 'JMessage-Api-easyIm-php-Client',
+                'Connection' => 'Keep-Alive',
+                'User-Agent' => 'JMessage-Api-easyIm-php-Client',
                 'Content-Type' => 'application/json',
             ],
         ];

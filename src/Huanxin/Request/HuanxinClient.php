@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the pkg6/easy-im.
+ *
+ * (c) pkg6 <https://github.com/pkg6>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 namespace Pkg6\easyIm\Huanxin\Request;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -38,7 +46,7 @@ class HuanxinClient extends BaseClient
      */
     public function send(string $method, string $action, array $params = [], $headerVerify = true)
     {
-        $url = $this->buildHost().Str::removeFristSlash($action);
+        $url = $this->buildHost() . Str::removeFristSlash($action);
         $options = [];
         if ($headerVerify) {
             $options['headers'] = $this->buildHeaders();
@@ -64,8 +72,8 @@ class HuanxinClient extends BaseClient
     public function getToken()
     {
         $params = [
-            'grant_type'    => 'client_credentials',
-            'client_id'     => $this->config['clientId'],
+            'grant_type' => 'client_credentials',
+            'client_id' => $this->config['clientId'],
             'client_secret' => $this->config['clientSecret'],
         ];
 
@@ -77,7 +85,7 @@ class HuanxinClient extends BaseClient
      */
     protected function buildHost()
     {
-        return HuanxinClient::$host.'/'.$this->config['orgName'].'/'.$this->config['appName'].'/';
+        return HuanxinClient::$host . '/' . $this->config['orgName'] . '/' . $this->config['appName'] . '/';
     }
 
     /**
@@ -87,11 +95,11 @@ class HuanxinClient extends BaseClient
      */
     protected function buildHeaders()
     {
-        $cahceKey = md5('client_credentials'.
-            $this->config['appKey'].
-            $this->config['clientId'].
+        $cahceKey = md5('client_credentials' .
+            $this->config['appKey'] .
+            $this->config['clientId'] .
             $this->config['clientSecret']);
-        if (!$this->app->cache->hasCache($cahceKey)) {
+        if ( ! $this->app->cache->hasCache($cahceKey)) {
             $tokens = $this->getToken();
             $tokensArr = json_decode($tokens, true);
             $this->app->cache->setCache($cahceKey, $tokensArr['access_token'], $tokensArr['expires_in']);
